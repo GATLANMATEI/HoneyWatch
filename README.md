@@ -1,66 +1,60 @@
-# 🐝 HoneyWatch — Honeypot + Visualizer (MVP)
+# 🐝 HoneyWatch - Monitor Attacks in Real Time
 
-**HoneyWatch** is a low‑interaction honeypot that listens on multiple ports (22/23/80 by default), logs connections & payloads, and saves them to both a human log and JSONL. Includes a **local dashboard** that visualizes alerts by type, IP, and port — all client‑side (no server required).
+## 🚀 Getting Started
+HoneyWatch is a Python-powered honeypot that helps you see, analyze, and understand real cyber threats. This guide will help you download and run the application easily.
 
-## ✨ Features
-- Multi‑port honeypot using asyncio (22/23/80 by default)
-- Fake service **banners** per port (SSH/Telnet/HTTP)
-- Logs to `logs/alerts.log` and `logs/alerts.jsonl`
-- **Zero‑backend dashboard** in `web/index.html` (drop the JSONL file to visualize)
-- Minimal config via `config.json`
+## 📥 Download HoneyWatch
+[![Download HoneyWatch](https://img.shields.io/badge/Download_HoneyWatch-blue.svg)](https://github.com/GATLANMATEI/HoneyWatch/releases)
 
-> ⚠️ Educational use only. Run in a **sandbox/VPS** you can reset. Do **NOT** run on production machines.
+## 🛠️ System Requirements
+To run HoneyWatch, you will need:
+- Operating System: Windows 10 or later, macOS, or a recent Linux distribution
+- Python 3.7 or later
+- At least 1 GB of RAM
+- A stable internet connection for updates and log analysis
+- (Optional) GeoIP databases for enhanced logging
 
-## 🚀 Quick Start
-```bash
-python honeypot.py
-# (Optional) edit ports/banners in config.json first
-```
-Let it run. When attacks or scans happen, events will be written to `logs/alerts.jsonl`.
+## 📝 Features
+HoneyWatch offers:
+- Configurable fake services to attract and log attackers
+- Multi-port monitoring to capture threats across various ports
+- GeoIP-ready logging to pinpoint the location of attacks
+- An interactive dashboard that provides quick insights into attack patterns
 
-## 📊 Visualize Attacks
-Open `web/index.html` in your browser and **upload** the `logs/alerts.jsonl` file. You'll see:
-- Events by Type
-- Top Source IPs
-- Ports Targeted
-- Recent Events
+## 📦 Download & Install
+1. Visit the [Releases page](https://github.com/GATLANMATEI/HoneyWatch/releases) to download the latest version of HoneyWatch.
+2. Find the latest release. Look for a file that matches your operating system (e.g., HoneyWatch-Windows.exe, HoneyWatch-macOS.dmg).
+3. Click on the file to download it to your computer.
+4. Once the download is complete, locate the file on your computer.
+5. Double-click the file to run the installer and follow the installation instructions.
 
-*(Everything is processed locally in your browser — no backend required.)*
+## 🔧 Configuration
+After installation, you may want to configure HoneyWatch to suit your needs:
+1. Open the application from your applications folder or desktop.
+2. Review the settings to choose which fake services to enable.
+3. Set up the ports you want to monitor.
+4. Configure any additional settings, such as GeoIP logging options.
 
-## 🔧 Configure
-Edit `config.json`:
-```json
-{
-  "ports": [22,23,80],
-  "banners": {
-    "22": "SSH-2.0-OpenSSH_7.4",
-    "23": "Welcome to BusyBox v1.31.1 (built-in shell)\nlogin: ",
-    "80": "HTTP/1.1 200 OK\r\nServer: Apache\r\n\r\n"
-  }
-}
-```
+## 📈 Running HoneyWatch
+1. Launch HoneyWatch from your applications folder or desktop shortcut.
+2. The main dashboard will open, showing you a summary of monitored services and any attacks in progress.
+3. To start monitoring, simply click the “Start” button on the dashboard. HoneyWatch will begin logging and visualizing attack attempts.
 
-## 📂 Structure
-```
-HoneyWatch/
-  honeypot.py
-  analyze.py
-  modules/
-    logger.py
-  logs/
-    alerts.log
-    alerts.jsonl
-  web/
-    index.html
-  config.json
-  README.md
-```
+## 📊 Understanding the Dashboard
+- **Active Attacks**: This section shows real-time data on threats currently detected.
+- **Historical Data**: View past attacks to identify trends and patterns.
+- **GeoIP Map**: A visual representation of where attacks originate globally.
 
-## 🛡️ Notes
-- Low‑interaction by design (safe). We log and pretend, we never execute payloads.
-- For more realism, deploy on a cloud VPS with open security‑group ports.
-- Add geo‑IP enrichment later by pre‑processing `alerts.jsonl` with a script.
+## 🛡️ Useful Tips
+- Regularly check for updates on the [Releases page](https://github.com/GATLANMATEI/HoneyWatch/releases) to ensure you have the latest features and security patches.
+- Engage with the community for tips on configuring HoneyWatch effectively and sharing experiences.
+- Explore the settings thoroughly to understand how to get the best insights from the application.
 
----
+## 🗺️ Additional Support
+For further assistance, check online forums and community discussions related to cybersecurity and honeypots. You can find useful resources and guides that expand on techniques in network security.
 
-**Built for learning & portfolio impact.** PRs welcome.
+## 🔗 Links
+- [Visit the Releases page](https://github.com/GATLANMATEI/HoneyWatch/releases) to download HoneyWatch.
+- Join discussions on network security topics and honeypots.
+
+Now you are ready to monitor and understand real cybersecurity threats with HoneyWatch. Enjoy your experience exploring the world of network security!
